@@ -1,8 +1,12 @@
+require 'date'
+
 class Auction
-  attr_reader :items
+  attr_reader :items,
+              :date
 
   def initialize
     @items = []
+    @date = DateTime.now.strftime('%d/%m/%Y')
   end
 
   def add_item(item)
@@ -52,4 +56,11 @@ class Auction
     end
     info
   end
+
+  # def close_auction
+  #   closed = {}
+  #   @items.each do |item|
+  #     closed[item] = item.current_high_bid
+  #   end
+  # end
 end
